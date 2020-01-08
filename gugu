@@ -1,0 +1,21 @@
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3299;
+
+
+const server = http.createServer((req,res)=>{
+	res.statusCode = 200;
+	res.setHeader('Content-Type', 'text/plain');
+	let message = '';
+	for(var i=1;i<=9;i++){
+		for(var j=1;j<=9;j++){
+			message += `${i} X ${j} = ${i*j}\n`
+		}
+	}
+	res.end(message);
+});
+
+server.listen(port,hostname,()=>{
+	console.log(`Server running at http://${hostname}:${port}/`);
+});
