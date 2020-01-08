@@ -10,8 +10,9 @@ const server = http.createServer((req,res)=>{
 	let message = '';
 	for(var i=1;i<=9;i++){
 		for(var j=1;j<=9;j++){
-			message += `${i} X ${j} = ${i*j}\n`
+			message += `${i} X ${j} = ${i*j}\t`
 		}
+		message += `\n`;
 	}
 	res.end(message);
 });
